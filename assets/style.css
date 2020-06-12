@@ -1,12 +1,16 @@
 #infoSection {
-    background-color: rgb(28, 153, 155);
+    background-color: rgba(15, 15, 42, 0.485);
     font-size: 20px;
+    
+    background-image:url(https://c4.wallpaperflare.com/wallpaper/58/872/874/hot-girl-picture-1920x1200-wallpaper-preview.jpg);
+    background-size:cover;
+    box-shadow:inset 0 0 0 2000px rgba(31, 177, 187, 0.3);
     text-align: center;
     font-family: sans-serif;
     color: rgb(255, 255, 255);
     text-shadow: black 1px 1px;
-    padding-top: 60px;
-    padding-bottom: 40px;
+    padding-top: 120px;
+    padding-bottom: 120px;
     margin-bottom: 40px;
 }
 
@@ -16,14 +20,8 @@ p {
   font-size: 18px;
 }
 
-body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
-    background-color: blueviolet;
-  }
   
   textarea{
-    background: transparent;
     border: none;
     resize: none;
     color: #212121;
@@ -71,6 +69,7 @@ body {
     border-left: 1px solid black;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    float: left;
     background-color: rgb(57, 58, 58);
     color: white;
     

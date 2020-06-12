@@ -128,7 +128,7 @@ myDay.forEach(function(thisHour) {
 
 // Create div that holds the text input form 
     var hourPlan = $("<div>")
-        .attr({"class" : "col-md-8"});
+        .attr({"class" : "col-md-8 p-0 "});
         
 //Create a text area element and add it to the div above
     var planData = $("<textarea>");
@@ -155,7 +155,7 @@ myDay.forEach(function(thisHour) {
 // create save button
     var saveButton = $("<i class='far fa-saveBtn fa-lg'></i>")
     var savePlan = $("<button>Save tasks</button>")
-        .attr({"class": "col-md-2 saveBtn"});
+        .attr({"class": "col-md-2 p-0 saveBtn"});
 
 // appends save button into the html
     savePlan.append(saveButton);
