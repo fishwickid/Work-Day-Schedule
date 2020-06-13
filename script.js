@@ -126,55 +126,55 @@ myDay.forEach(function(thisHour) {
     });
 
 
+
+
 // Create div that holds the text input form 
-    var hourPlan = $("<div>")
-        .attr({"class" : "col-md-8 p-0 "});
-        
-//Create a text area element and add it to the div above
-    var planData = $("<textarea>");
-    hourPlan.append(planData);
-     planData.attr("id", thisHour.id);
 
+  var hourPlan = $("<div>")
+  .attr({
+      "class": "col-md-9 description p-0"
+  });
 
-// Creat if else statments determing if the hour is now, if it's past, or in the future
+// Create if else statments determing if the hour is now, if it's past, or in the future
 // add CSS attributus to them to change the background colour in CSS
-    if (thisHour.time < moment().format("HH")) {
-        planData.attr ({
-            "class": "past", 
-        })
-    } else if (thisHour.time === moment().format("HH")) {
-        planData.attr({
-            "class": "present"
-        })
-    } else if (thisHour.time > moment().format("HH")) {
-        planData.attr({
-            "class": "future"
-        })
-    }
 
-// create save button
-    var saveButton = $("<i class='far fa-saveBtn fa-lg'></i>")
-    var savePlan = $("<button>Save tasks</button>")
-        .attr({"class": "col-md-2 p-0 saveBtn"});
+var planData = $("<textarea>");
+hourPlan.append(planData);
+planData.attr("id", thisHour.id);
+if (thisHour.time < moment().format("HH")) {
+  planData.attr ({
+      "class": "past", 
+  })
+} else if (thisHour.time === moment().format("HH")) {
+  planData.attr({
+      "class": "present"
+  })
+} else if (thisHour.time > moment().format("HH")) {
+  planData.attr({
+      "class": "future"
+  })
+}
 
-// appends save button into the html
-    savePlan.append(saveButton);
-    hourRow.append(hourField, hourPlan, savePlan);
+// creates save button
+var saveButton = $("<i class='far fa-save fa-lg'></i>")
+var savePlan = $("<button>Save text</button>")
+  .attr({
+      "class": "col-md-1 saveBtn"
+});
+savePlan.append(saveButton);
+hourRow.append(hourField, hourPlan, savePlan);
 })
 
 // loads any existing localstorage data after components created
 init();
 
 
-
-//Create and click event handler on the save button
-//prevent default method so the page won't refresh
 // saves data to be used in localStorage
-$(".saveButton").on("click", function(event) {
-    event.preventDefault();
-    var saveIndex = $(this).siblings(".description").children(".future").attr("id");
-    myDay[saveIndex].reminder = $(this).siblings(".description").children(".future").val();
-    console.log(saveIndex);
-    saveReminders();
-    displayReminders();
+$(".saveBtn").on("click", function(event) {
+event.preventDefault();
+var saveIndex = $(this).siblings(".description").children(".future").attr("id");
+myDay[saveIndex].reminder = $(this).siblings(".description").children(".future").val();
+console.log(saveIndex);
+saveReminders();
+displayReminders();
 })
